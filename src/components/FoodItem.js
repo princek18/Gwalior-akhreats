@@ -1,6 +1,12 @@
 import { useState } from "react";
+import { useDispatch } from "react-redux";
 import { imageUrl } from "../utils/config";
+import { addItem } from "../utils/CartSlice";
 const FoodItem = ({ item, index }) => {
+  const dispatch = useDispatch();
+  const handelAddItem = (item) => {
+    dispatch(addItem(item));
+  };
   const [show, setShow] = useState(false);
   return (
     <div key={index}>
@@ -40,7 +46,9 @@ const FoodItem = ({ item, index }) => {
                   className="itemPic"
                   src={imageUrl + food?.card?.info?.imageId}
                 ></img>
-                <button className="btn">Add</button>
+                <button className="btn" onClick={() => handelAddItem(food)}>
+                  Add
+                </button>
               </div>
             </div>
           );

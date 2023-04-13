@@ -149,12 +149,41 @@ button {
 
 .btn {
   margin-top: 10px;
-  width: 60px;
-  height: 30px;
+  width: 70px;
+  height: 40px;
 }
 
 .itemAdd {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.cartItem {
+  border: solid 2px black;
+  border-radius: 10px;
+  padding: 5px;
+  margin: 3px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  width: 50%;
+}
+
+.cartItemNamePic {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+.cartBtnFlex {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 30%;
+}
+
+.cartPic {
+  width: 100px;
+  height: 70px;
 }

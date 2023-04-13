@@ -1,4 +1,5 @@
 import { useState, useContext } from "react";
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import logo from "../assests/logo.jpg";
 import useOnline from "../utils/useOnline.js";
@@ -14,7 +15,7 @@ const Nav = () => {
   const [loginState, setLoginState] = useState(true);
   const networkStatus = useOnline();
   const { user } = useContext(userContext);
-
+  const cartItems = useSelector((store) => store.cart.items);
   return (
     <div className="nav">
       <ul>
@@ -27,7 +28,9 @@ const Nav = () => {
         <Link to="/contact">
           <li>Contact</li>
         </Link>
-        <li>Cart</li>
+        <Link to="/cartPage">
+          <li>Cart ({cartItems.length})</li>
+        </Link>
         <li>{networkStatus ? "🔛" : "📴"}</li>
         {loginState ? (
           <button onClick={() => setLoginState(false)}>Login</button>

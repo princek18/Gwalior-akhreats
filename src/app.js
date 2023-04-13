@@ -25,6 +25,9 @@ import ResturantMenu from "./components/resturantMenu";
 import FastMart from "./components/FastMart";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import userConetxt from "./utils/userContext";
+import { Provider } from "react-redux";
+import store from "./utils/store";
+import CartPage from "./components/CartPage";
 
 const AppLayout = () => {
   // const [user, setUser] = useState();
@@ -39,7 +42,7 @@ const AppLayout = () => {
     email: "akrock0512000@gmail.com",
   };
   return (
-    <>
+    <Provider store={store}>
       <userConetxt.Provider
         value={{
           user: user,
@@ -50,7 +53,7 @@ const AppLayout = () => {
       </userConetxt.Provider>
       <Outlet></Outlet>
       <Footer></Footer>
-    </>
+    </Provider>
   );
 };
 
@@ -79,6 +82,10 @@ const appRouter = createBrowserRouter([
       {
         path: "/fastmart",
         element: <FastMart />,
+      },
+      {
+        path: "/cartPage",
+        element: <CartPage />,
       },
     ],
   },
