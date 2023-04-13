@@ -1,0 +1,160 @@
+a {
+  text-decoration: none;
+  color: black;
+  margin: 5px;
+}
+
+button {
+  border: 2px solid black;
+  border-radius: 5px;
+}
+
+.logo > img {
+  align-items: center;
+  height: 40px;
+  width: 50px;
+}
+
+.logo {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  align-items: center;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 50px;
+  border: 2px solid burlywood;
+  background-color: bisque;
+  margin: 10px;
+}
+
+.nav > ul > li {
+  padding: 10px;
+}
+
+.nav > ul {
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  align-items: center;
+}
+
+.card {
+  border: 2px solid black;
+  width: 200px;
+  height: 300px;
+  margin: 5px;
+  padding: 5px;
+}
+
+.card > img {
+  width: 200px;
+  height: auto;
+  margin-bottom: 5px;
+}
+
+.card :hover {
+  border: 3px solid white;
+}
+
+.resturant-lists {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.simmer {
+  border: 2px solid black;
+  width: 150px;
+  margin: 5px;
+}
+
+.simmerPic {
+  background-color: darkgray;
+  border-radius: 5px;
+  width: 140px;
+  height: 170px;
+  margin: 5px;
+}
+
+.simmerResturantName {
+  background-color: darkgrey;
+  width: 140px;
+  height: 10px;
+  margin: 10px;
+}
+
+.simmerResturanttags,
+.simmerETA {
+  background-color: darkgrey;
+  width: 140px;
+  height: 7px;
+  margin: 10px;
+}
+
+.SearchBar {
+  margin-left: 35%;
+}
+
+.Search {
+  width: 220px;
+  border: 2px solid black;
+  border-radius: 5px;
+}
+
+.menuPic {
+  margin-top: 20px;
+  width: 210px;
+  height: 210px;
+}
+
+.resturantMenuCard {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.itemPic {
+  width: 250px;
+  height: 200px;
+}
+
+.itemConatiner {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border: 2px solid black;
+  padding: 5px;
+  border-radius: 10px;
+  margin: 3px;
+  height: auto;
+}
+
+.h1ButtonCombo {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.namePrice {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 50%;
+}
+
+.btn {
+  margin-top: 10px;
+  width: 60px;
+  height: 30px;
+}
+
+.itemAdd {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
