@@ -42,11 +42,13 @@ const Nav = () => {
   );
 };
 
-const Header = () => (
-  <div className="header">
-    <Title />
-    <Nav />
-  </div>
-);
+const Header = () => {
+  return (
+    <div className="header">
+      <Title />
+      <Nav />
+    </div>
+  );
+};
 
 export default Header;

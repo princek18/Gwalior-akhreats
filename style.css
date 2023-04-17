@@ -22,6 +22,12 @@ button {
   align-items: center;
 }
 
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
 .header {
   display: flex;
   flex-direction: row;
@@ -148,9 +154,15 @@ button {
 }
 
 .btn {
+  cursor: pointer;
   margin-top: 10px;
   width: 70px;
   height: 40px;
+}
+
+.btn:disabled {
+  border: 1px solid grey;
+  cursor: not-allowed;
 }
 
 .itemAdd {

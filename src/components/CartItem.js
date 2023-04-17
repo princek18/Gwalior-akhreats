@@ -1,9 +1,22 @@
+import { useDispatch } from "react-redux";
 import { imageUrl } from "../utils/config";
+import { increaseQunatity } from "../utils/CartSlice";
+import { decreaseQuantity, updateOrderValue } from "../utils/CartSlice";
 const CartItem = ({ itemList }) => {
-  console.log(itemList);
+  const dispatch = useDispatch();
+  const handelIncreaseBtn = (id) => {
+    dispatch(increaseQunatity(id));
+    dispatch(updateOrderValue());
+  };
+
+  const handelDecreaseBtn = (id) => {
+    dispatch(decreaseQuantity(id));
+    dispatch(updateOrderValue());
+  };
+
   let price = itemList?.price;
   let defaultPrice = itemList?.defaultPrice;
-  let finalPrice = defaultPrice ? defaultPrice : price;
+  let finalPrice = defaultPrice ? defaultPrice / 100 : price / 100;
   return (
     <div className="cartItem" key={itemList?.id}>
       <div className="cartItemNamePic">
@@ -12,11 +25,12 @@ const CartItem = ({ itemList }) => {
       </div>
       <div className="cartItemNamePic">
         <div className="cartBtnFlex">
-          <button>-</button>
-          <h5>1</h5>
-          <button>+</button>
+          <button onClick={() => handelDecreaseBtn(itemList.id)}>-</button>
+          <h5>{itemList.quantity}</h5>
+          <button onClick={() => handelIncreaseBtn(itemList.id)}>+</button>
         </div>
-        <h5>Price:{finalPrice / 100}</h5>
+        <h5>Price:{finalPrice}</h5>
+        <h4>Total Price : {finalPrice * itemList.quantity}</h4>
       </div>
     </div>
   );

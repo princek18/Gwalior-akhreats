@@ -28,6 +28,7 @@ import userConetxt from "./utils/userContext";
 import { Provider } from "react-redux";
 import store from "./utils/store";
 import CartPage from "./components/CartPage";
+import PaymentPage from "./components/paymentPage";
 
 const AppLayout = () => {
   // const [user, setUser] = useState();
@@ -86,6 +87,10 @@ const appRouter = createBrowserRouter([
       {
         path: "/cartPage",
         element: <CartPage />,
+      },
+      {
+        path: "/paymentPage",
+        element: <PaymentPage />,
       },
     ],
   },
