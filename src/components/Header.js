@@ -1,9 +1,11 @@
-import { useState, useContext } from "react";
-import { useSelector } from "react-redux";
+import { useState, useContext, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import logo from "../assests/logo.jpg";
 import useOnline from "../utils/useOnline.js";
 import userContext from "../utils/userContext";
+import { updateCartRefresh } from "../utils/CartSlice";
+
 const Title = () => (
   <div className="logo">
     <img src={logo} />
@@ -43,6 +45,13 @@ const Nav = () => {
 };
 
 const Header = () => {
+  const dispatch = useDispatch();
+  const localStorageCartItem = () => {
+    dispatch(updateCartRefresh());
+  };
+  useEffect(() => {
+    localStorageCartItem();
+  }, []);
   return (
     <div className="header">
       <Title />

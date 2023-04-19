@@ -25,7 +25,7 @@ const CartPage = () => {
       <hr></hr>
       {cartItems.length ? (
         cartItems.map((item) => {
-          return <CartItem itemList={item}></CartItem>;
+          return <CartItem itemList={item} key={item.id}></CartItem>;
         })
       ) : (
         <h4>Your cart is empty please add someting</h4>

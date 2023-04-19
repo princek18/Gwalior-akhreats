@@ -11,10 +11,14 @@ const CartSlice = createSlice({
       let data = action.payload;
       data["quantity"] = 1;
       state.items.push(data);
+      localStorage.setItem("items", JSON.stringify(state.items));
+      localStorage.setItem("orderValue", JSON.stringify(state.orderValue));
     },
     clearCart: (state) => {
       state.items = [];
       state.orderValue = 0;
+      localStorage.setItem("items", JSON.stringify(state.items));
+      localStorage.setItem("orderValue", JSON.stringify(state.orderValue));
     },
     increaseQunatity: (state, action) => {
       let data = JSON.parse(JSON.stringify(state.items));
@@ -24,6 +28,8 @@ const CartSlice = createSlice({
         }
       }
       state.items = data;
+      localStorage.setItem("items", JSON.stringify(state.items));
+      localStorage.setItem("orderValue", JSON.stringify(state.orderValue));
     },
     decreaseQuantity: (state, action) => {
       // console.log(action.payload);
@@ -42,6 +48,8 @@ const CartSlice = createSlice({
         data = data.filter((item) => item.id !== dataId);
       }
       state.items = data;
+      localStorage.setItem("items", JSON.stringify(state.items));
+      localStorage.setItem("orderValue", JSON.stringify(state.orderValue));
     },
     updateOrderValue: (state) => {
       let data = JSON.parse(JSON.stringify(state.items));
@@ -53,6 +61,14 @@ const CartSlice = createSlice({
         value += data[i].quantity * finalPrice;
       }
       state.orderValue = value;
+      localStorage.setItem("orderValue", JSON.stringify(state.orderValue));
+    },
+    updateCartRefresh: (state) => {
+      const dataOrderValue = JSON.parse(localStorage.getItem("orderValue"));
+      const dataItems = JSON.parse(localStorage.getItem("items"));
+      state.items = dataItems;
+      state.orderValue = dataOrderValue;
+      // console.log(dataOrderValue, dataItems);
     },
   },
 });
@@ -63,6 +79,7 @@ export const {
   increaseQunatity,
   decreaseQuantity,
   updateOrderValue,
+  updateCartRefresh,
 } = CartSlice.actions;
 
 export default CartSlice.reducer;
