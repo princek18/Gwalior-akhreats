@@ -15,20 +15,20 @@
 
 import React, { useEffect } from "react";
 import ReactDOM from "react-dom/client";
-import Header from "./components/header";
-import Body from "./components/body";
-import Footer from "./components/footer";
-import AboutUs from "./components/aboutUs";
-import Contact from "./components/contactUs";
-import ErrorPage from "./components/error";
-import ResturantMenu from "./components/resturantMenu";
+import Header from "./components/Header";
+import Body from "./components/Body";
+import Footer from "./components/Footer";
+import AboutUs from "./components/AboutUs";
+import Contact from "./components/ContactUs";
+import ErrorPage from "./components/Error";
+import ResturantMenu from "./components/ResturantMenu";
 import FastMart from "./components/FastMart";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import userConetxt from "./utils/userContext";
 import { Provider } from "react-redux";
 import store from "./utils/store";
 import CartPage from "./components/CartPage";
-import PaymentPage from "./components/paymentPage";
+import PaymentPage from "./components/PaymentPage";
 
 const AppLayout = () => {
   // const [user, setUser] = useState();
