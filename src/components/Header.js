@@ -18,6 +18,7 @@ const Nav = () => {
   const networkStatus = useOnline();
   const { user } = useContext(userContext);
   const cartItems = useSelector((store) => store.cart.items);
+  console.log(cartItems);
   return (
     <div className="nav">
       <ul>

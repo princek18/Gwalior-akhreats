@@ -9,7 +9,7 @@ const CartSlice = createSlice({
   reducers: {
     addItem: (state, action) => {
       let data = action.payload;
-      data["quantity"] = 1;
+    data["quantity"] = 1;
       state.items.push(data);
       localStorage.setItem("items", JSON.stringify(state.items));
       localStorage.setItem("orderValue", JSON.stringify(state.orderValue));
@@ -66,8 +66,8 @@ const CartSlice = createSlice({
     updateCartRefresh: (state) => {
       const dataOrderValue = JSON.parse(localStorage.getItem("orderValue"));
       const dataItems = JSON.parse(localStorage.getItem("items"));
-      state.items = dataItems;
-      state.orderValue = dataOrderValue;
+      state.items = dataItems || [];
+      state.orderValue = dataOrderValue || 0;
       // console.log(dataOrderValue, dataItems);
     },
   },
